@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import Layout from '../components/layout';
 import { useDispatch, useSelector } from 'react-redux';
 import { getItemsFromStorage, sendOrder } from '../state/app';
-import CartItem from '../components/CartItem';
+import CartItem from '../components/cartItem';
 import CheckoutForm from '../components/checkoutForm';
 import CheckoutCheck from '../components/checkoutCheck';
 
