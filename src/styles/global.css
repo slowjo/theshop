@@ -1,6 +1,7 @@
 :root {
   /* --background: rgba(0, 214, 170, 0.85); */
-  --background: rgba(33, 147, 176, 0.85);
+  /* --background: rgba(33, 147, 176, 0.85); */
+  --background: rgba(68, 189, 50, 0.85);
 }
 
 *,
@@ -210,7 +211,8 @@ section {
   font-size: 1.125em;
   padding: 0.5em 1.25em;
   border-radius: 0.25em;
-  background: var(--clr-accent, blue);
+  /* background: var(--clr-accent, blue); */
+  background: var(--clr-accent, #00a8ff);
   transition: transform 250ms ease-in-out, opacity 250ms linear;
   background-image: none;
   text-shadow: none;
@@ -619,7 +621,8 @@ textarea {
   left: 10%;
   padding: 75% 75% 0 0;
   border-radius: 50%;
-  background: #2193b0;
+  /* background: #2193b0; */
+  background: #7f8fa6;
   z-index: -1;
 }
 
@@ -729,25 +732,45 @@ textarea {
 }
 
 .hero {
-  --clr-accent: #faa700;
+  /* --clr-accent: #faa700; */
+  /* --clr-accent: #e1b12c; */
+  --clr-accent: #44bd32;
 }
 
 .pen-red {
-  --clr-inner: #faa700;
-  --clr-outer: #e48d00;
-  --clr-accent: #a1173c;
+  /* --clr-inner: #faa700;
+  --clr-outer: #e48d00; */
+  /* --clr-accent: #a1173c; */
+  /* New */
+  --clr-inner: #7f8fa6;
+  --clr-outer: #353b48;
+  --clr-accent: #44bd32;
+  color: white;
+  /* End New */
 }
 
 .pen-white {
   --clr-inner: #fce4b3;
   --clr-outer: #eac886;
   --clr-accent: #2f4858;
+  /* New */
+  --clr-inner: #7f8fa6;
+  --clr-outer: #353b48;
+  --clr-accent: #44bd32;
+  color: white;
+  /* End New */
 }
 
 .pen-blue {
   --clr-inner: #6dd5ed;
   --clr-outer: #2193b0;
   --clr-accent: #008951;
+  /* New */
+  --clr-inner: #7f8fa6;
+  --clr-outer: #353b48;
+  --clr-accent: #44bd32;
+  color: white;
+  /* End New */
 }
 
 /* Added by me */

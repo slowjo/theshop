@@ -20,7 +20,8 @@ export default ({ data }) => {
     <>
     <Layout>
       <header className="hero" style={{
-        backgroundImage: `url(${PicThree}), radial-gradient(#444, #111)`
+        backgroundImage: `url(${PicThree}), radial-gradient(#7f8fa6, #353b48)`
+        /* backgroundImage: `url(${PicThree}), radial-gradient(#444, #111)` */
       }}>
         <div className="container spacing">
           <h1 className="primary-title">Amazing products for amazing people</h1>
