@@ -55,8 +55,8 @@ export default function CartPage() {
             ))}
             <div className="tocheckoutdiv">
                 <div>
-                    <p>Gesamt: {cartItems.reduce((acc, item) => acc + (item.qty * item.price/100), 0)} Euro</p>
-                    <button className="btn my-1" onClick={onCheckoutStepOne}>Zur Kasse</button>
+                    <p>Sum: {cartItems.reduce((acc, item) => acc + (item.qty * item.price/100), 0)} Euro</p>
+                    <button className="btn my-1" onClick={onCheckoutStepOne}>To Checkout</button>
                 </div>
             </div>
             </>
