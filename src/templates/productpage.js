@@ -37,7 +37,7 @@ export default function ProductPage({ data }) {
     return (
         <>
         <Layout>
-            <div className="container py-2">
+            <div className="container py-2 product-page-container">
                 <button className="btn" onClick={goBack}>Back</button>
                 <article className="product product-detail pen-red spacing my-2">    
                 <img src={product.imgUrl} alt={product.imgAlt} className="product__image" style={{

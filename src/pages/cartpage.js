@@ -43,7 +43,7 @@ export default function CartPage() {
     return (
         <>
         <Layout>
-            <div className="container py-2">
+            <div className="container py-2 cartpage-container">
             {cartState === "start" && (
             <>    
             <h1>Your Shopping Cart</h1>

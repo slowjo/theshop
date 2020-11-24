@@ -84,7 +84,7 @@ const Details = ({ location }) => {
                 )}
             </div>
         {selectedProduct && (
-        <div className="container py-2" style={showForm ? detailsHeight : {}}>
+        <div className="container py-2 details-container" style={showForm ? detailsHeight : {}}>
                 <button className="btn" onClick={goBack}>Back</button>
                 <h2>Editmode</h2>
                 <button className="btn" onClick={onShowForm}>Edit</button>

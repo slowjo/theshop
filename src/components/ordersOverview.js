@@ -19,7 +19,7 @@ const OrdersOverView = () => {
 
     return (
         <>
-        <div className="container py-2">
+        <div className="container py-2 orders-container">
             <h2 className="section-title my-1">Orders Overview</h2>
             <div className="orders-overview">
                 {orders && orders.map(order => (
