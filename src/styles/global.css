@@ -319,7 +319,6 @@ textarea {
   top: 150px;
   /* top: 15%; */
   /* left: 30%; */
-  /* left: 5%; */
   /* width: 40%; */
   /* width: 90%; */
   width: 100%;
@@ -588,6 +587,7 @@ textarea {
 
 .featured {
   background: #eee;
+  width: 100%;
 }
 
 .featured__item {
@@ -632,6 +632,11 @@ textarea {
   display: block;
   font-weight: 700;
   font-size: 2.5rem;
+}
+
+/* Added by me */
+.our-products {
+  width: 100%;
 }
 
 .product {
