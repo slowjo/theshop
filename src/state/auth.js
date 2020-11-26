@@ -339,6 +339,7 @@ export default (state = initialState, action) => {
                 editableProducts: [],
                 selectedProduct: null,
                 editMode: false,
+                loading: false,
             };
         case AUTH_ADMIN_SUCCESS:
             return {

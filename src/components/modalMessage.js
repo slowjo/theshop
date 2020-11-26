@@ -20,8 +20,8 @@ const ModalMessage = ({ onYes, onNo }) => {
                 {message}
             </h2>
             <div className="modal-message__buttons">
-                <button className="btn" onClick={onYesClick}>Yes</button>
-                <button className="btn ml-1" onClick={onNoClick}>No</button>
+                <button className="btn bg-red" onClick={onYesClick}>Yes</button>
+                <button className="btn ml-1" onClick={onNoClick}>Cancel</button>
             </div>
         </div>
     );
