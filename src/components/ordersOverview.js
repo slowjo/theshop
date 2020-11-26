@@ -42,7 +42,7 @@ const OrdersOverView = () => {
                         ))} 
                     </div>    
                     <div className="order-overview__card-bottom">
-                        <button className="btn order-overview__delete" onClick={() => onRemove(order._id)}>Delete Order</button>
+                        <button className="btn order-overview__delete bg-red" onClick={() => onRemove(order._id)}>Delete Order</button>
                     </div>
                     </div>
                 ))}

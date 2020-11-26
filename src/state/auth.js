@@ -7,7 +7,7 @@ const initialState = {
     modalProduct: null,
     message: null,
     orders: null,
-    loading: false,
+    loading: true,
 };
 
 const theUrl = 'https://damp-garden-52954.herokuapp.com/'
@@ -34,12 +34,43 @@ const GET_ORDERS = 'GET_ORDERS';
 const REMOVE_ORDER = 'REMOVE_ORDER';
 const REBUILD = 'REBUILD';
 const SET_LOADING = 'SET_LOADING';
+const AUTH_ADMIN_SUCCESS = 'AUTH_ADMIN_SUCCESS';
+const AUTH_ADMIN_FAIL = 'AUTH_ADMIN_FAIL';
 
 
 export const setLoading = (loadingState) => ({
     type: SET_LOADING,
     payload: loadingState,
 });
+
+export const authAdmin = () => async dispatch => {
+    try {
+        const res = await fetch(`${theUrl}auth`, {
+            headers: {
+                'x-auth-token': localStorage.getItem('token'),
+            }
+        });
+
+        if (res.status !== 200) {
+            throw new Error('Error Authenticating');
+        }
+
+        const resData = await res.json();
+
+        console.log(resData);
+
+        dispatch({
+            type: AUTH_ADMIN_SUCCESS,
+            payload: resData.msg,
+        });
+    } catch (err) {
+        console.log(err);
+        dispatch({
+            type: AUTH_ADMIN_FAIL,
+            payload: err.message,
+        });
+    }
+};
 
 export const login = ({ username, password }) => async dispatch => {
     try {
@@ -298,6 +329,7 @@ export default (state = initialState, action) => {
             };
         case LOGIN_FAIL:
         case LOGOUT:
+        case AUTH_ADMIN_FAIL:    
             localStorage.removeItem('token');    
             return {
                 ...state,
@@ -307,7 +339,13 @@ export default (state = initialState, action) => {
                 editableProducts: [],
                 selectedProduct: null,
                 editMode: false,
-            };    
+            };
+        case AUTH_ADMIN_SUCCESS:
+            return {
+                ...state,
+                isLoggedIn: true,
+                loading: false,
+            };        
         case GET_PRODUCTS:
             return {
                 ...state,
@@ -382,7 +420,7 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 loading: action.payload,
-            };    
+            };        
         default:
             return state;
     }
