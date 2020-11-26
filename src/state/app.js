@@ -47,7 +47,7 @@ export const changeQty = (id, newQty) => async (dispatch, getState) => {
 
 export const sendOrder = (customerDetails, cartItems) => async (dispatch) => {
     try {
-        const res = await fetch(`${theUrl}new`, {
+        const res = await fetch(`${theUrl}orders/new`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
