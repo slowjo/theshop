@@ -40,12 +40,13 @@ export default function Navbar() {
                             <Link to="/app/orders">Orders</Link>
                         </li>
                         <li>
-                            <button
+                            {/* <button
                                 className="btn"
                                 onClick={onExit}
                             >
                                 Exit
-                            </button>
+                            </button> */}
+                            <a onClick={onExit} href="#!">Exit Editmode</a>
                         </li>
                         </>
                     )}

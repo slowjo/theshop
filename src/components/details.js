@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { navigate } from 'gatsby';
 import { useSelector, useDispatch } from 'react-redux';
 import { setMessage, removeProduct } from '../state/auth';
@@ -11,6 +11,12 @@ const Details = ({ location }) => {
     const authState = useSelector(state => state.auth);
 
     const { selectedProduct } = authState;
+
+    useEffect(() => {
+        if (!selectedProduct) {
+            navigate('/app/adminarea');
+        }
+    }, []);
 
     const goBack = () => {
         window.history.back();
