@@ -7,6 +7,7 @@ const initialState = {
     modalProduct: null,
     message: null,
     orders: null,
+    loading: false,
 };
 
 const theUrl = 'https://damp-garden-52954.herokuapp.com/'
@@ -32,7 +33,13 @@ const CLEAR_MESSAGE = 'CLEAR_MESSAGE';
 const GET_ORDERS = 'GET_ORDERS';
 const REMOVE_ORDER = 'REMOVE_ORDER';
 const REBUILD = 'REBUILD';
+const SET_LOADING = 'SET_LOADING';
 
+
+export const setLoading = (loadingState) => ({
+    type: SET_LOADING,
+    payload: loadingState,
+});
 
 export const login = ({ username, password }) => async dispatch => {
     try {
@@ -71,6 +78,8 @@ export const logout = () => ({
 
 export const getProducts = () => async dispatch => {
     try {
+        dispatch(setLoading(true));
+
         const res = await fetch(`${theUrl}products`);
 
         if (res.status !== 200) {
@@ -83,11 +92,15 @@ export const getProducts = () => async dispatch => {
             type: GET_PRODUCTS,
             payload: resData.products,
         });
+
+        dispatch(setLoading(false));
     } catch (err) {
         dispatch({
             type: PRODUCTS_ERROR,
             payload: err.message,
         });
+
+        dispatch(setLoading(false));
     }
 };
 
@@ -203,6 +216,8 @@ export const clearMessage = () => ({
 
 export const getOrders = () => async (dispatch) => {
     try {
+        dispatch(setLoading(true));
+
         const res = await fetch(`${theUrl}orders`, {
             headers: {
                 'x-auth-token': localStorage.getItem('token'),
@@ -219,8 +234,11 @@ export const getOrders = () => async (dispatch) => {
             type: GET_ORDERS,
             payload: resData.orders,
         })
+
+        dispatch(setLoading(false));
     } catch (err) {
         console.log(err);
+        dispatch(setLoading(false));
     }
 };
 
@@ -360,6 +378,11 @@ export default (state = initialState, action) => {
                 products: action.payload,
                 editableProducts: action.payload,
             };
+        case SET_LOADING:
+            return {
+                ...state,
+                loading: action.payload,
+            };    
         default:
             return state;
     }

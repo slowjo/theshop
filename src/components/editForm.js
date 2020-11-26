@@ -60,7 +60,7 @@ const EditForm = ({ product, hideForm, backToRef, detailsPage }) => {
         <form onSubmit={onSubmit} className="spacing edit-form">
             <div className="edit-top">
             <h2>{product ? 'Edit Product' : 'Add New Product'}</h2>
-            <button className="btn" onClick={onHideForm}>Close</button>
+            <button className="btn close-btn" onClick={onHideForm}>x</button>
             </div>
             <div className="form-group">
                 <label htmlFor="name">Name</label>

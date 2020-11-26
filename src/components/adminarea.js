@@ -6,6 +6,7 @@ import Featured from './featured';
 import ProductsNew from './productsnew';
 import EditForm from './editForm';
 import ModalMessage from './modalMessage';
+import Spinner from './spinner';
 
 const AdminArea = () => {
     const dispatch = useDispatch();
@@ -22,7 +23,7 @@ const AdminArea = () => {
 
     const authState = useSelector(state => state.auth);
 
-    const { products, editableProducts, addedProducts, modalProduct } = authState;
+    const { products, editableProducts, addedProducts, modalProduct, loading } = authState;
 
     const [showBackdrop, setShowBackdrop] = useState(false);
 
@@ -93,6 +94,9 @@ const AdminArea = () => {
                     <ModalMessage onYes={onYes} onNo={onNo} />
                 )}
             </div>
+            {loading && (
+                <Spinner />
+            )}
             {products && (
                 <>
                 <RebuildButton products={products} />

@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getOrders, removeOrder } from '../state/auth';
+import Spinner from './spinner';
 
 const OrdersOverView = () => {
     const dispatch = useDispatch();
@@ -11,7 +12,7 @@ const OrdersOverView = () => {
 
     const authState = useSelector(state => state.auth);
 
-    const { orders } = authState;
+    const { orders, loading } = authState;
 
     const onRemove = (id) => {
         dispatch(removeOrder(id));
@@ -21,7 +22,11 @@ const OrdersOverView = () => {
         <>
         <div className="container py-2 orders-container">
             <h2 className="section-title my-1">Orders Overview</h2>
-            <div className="orders-overview">
+            <div className="orders-overview mb-1">
+                <>
+                {loading && !orders && (
+                    <Spinner />
+                )}
                 {orders && orders.map(order => (
                     <div key={order._id} className="order-overview__card">
                     <div className="order-overview__card-top">
@@ -41,6 +46,7 @@ const OrdersOverView = () => {
                     </div>
                     </div>
                 ))}
+                </>
             </div>
         </div>
         </>

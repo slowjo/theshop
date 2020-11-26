@@ -30,7 +30,7 @@ export default ({ data }) => {
         </div>
       </header>
 
-      <main>
+      <main id="products">
 
           <Featured products={data.allProduct.nodes.filter(node => node.isFeatured === true)} />
 

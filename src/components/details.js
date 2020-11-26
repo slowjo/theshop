@@ -85,10 +85,10 @@ const Details = ({ location }) => {
             </div>
         {selectedProduct && (
         <div className="container py-2 details-container" style={showForm ? detailsHeight : {}}>
-                <button className="btn" onClick={goBack}>Back</button>
-                <h2>Editmode</h2>
+                <button className="btn mb-1" onClick={goBack}>{"<"} Back</button>
+                <br/>
                 <button className="btn" onClick={onShowForm}>Edit</button>
-                <button className="btn ml-1" onClick={onRemove}>Delete</button>    
+                <button className="btn ml-1 bg-red" onClick={onRemove}>Delete</button>    
                 <article className="product product-detail pen-red spacing my-2">    
                 <img src={selectedProduct.imgUrl} alt={selectedProduct.imgAlt} className="product__image" style={{
                     shapeOutside: `url(${selectedProduct.imgUrl})`

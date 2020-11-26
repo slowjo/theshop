@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import { Link } from 'gatsby';
 import Layout from '../components/layout';
 import { useDispatch, useSelector } from 'react-redux';
 import { getItemsFromStorage, sendOrder } from '../state/app';
@@ -45,7 +46,8 @@ export default function CartPage() {
         <Layout>
             <div className="container py-2 cartpage-container">
             {cartState === "start" && (
-            <>    
+            <>
+            <Link className="btn mb-1" to="/#products">Keep Shopping</Link>    
             <h1>Your Shopping Cart</h1>
             {cartItems.map(item => (
                 <CartItem

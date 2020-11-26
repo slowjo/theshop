@@ -41,7 +41,7 @@ export default function ProductItemnew({ product, prodNum, isAdmin, showForm, pr
                 onClick={onShowForm}
                 >Edit
             </button>
-            <button className="btn ml-1"
+            <button className="btn ml-1 bg-red"
                 onClick={onRemove}
                 >Delete
             </button>

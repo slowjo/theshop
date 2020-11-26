@@ -254,6 +254,12 @@ section {
   font-size: 50px;
 }
 
+.close-btn {
+  padding: 0 0.7em;
+  border-radius: 3px;
+  background: #e84118;
+}
+
 .my-1 {
   margin: 2rem 0;
 }
@@ -264,6 +270,10 @@ section {
 
 .mt-2 {
   margin: 5rem 0 0 0;
+}
+
+.mb-1 {
+  margin: 0 0 2rem 0;
 }
 
 .ml-1 {
@@ -284,6 +294,10 @@ section {
 
 .text-center {
   text-align: center;
+}
+
+.bg-red {
+  background: #e84118;
 }
 
 .layout {
@@ -442,7 +456,8 @@ textarea {
 }
 
 .icon-container {
-  height: 17em;
+  /* height: 17em; */
+  height: 10em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -450,16 +465,21 @@ textarea {
 }
 
 .icon {
-  width: 10em;
-  height: 10em;
+  /* width: 10em;
+  height: 10em; */
+  width: 5.5em;
+  height: 5.5em;
   position: relative;
   background: grey;
   border-radius: 50%;
+  padding: 0;
 }
 
 .icon-active {
-  width: 10em;
-  height: 10em;
+  /* width: 10em;
+  height: 10em; */
+  width: 5.5em;
+  height: 5.5em;
   position: relative;
   /* transition: transform 250ms ease-in-out, opacity 250ms linear; */
   border-radius: 50%;
@@ -489,7 +509,7 @@ textarea {
 .icon-active::before {
   content: "Rebuild";
   /* font-weight: 900; */
-  font-size: 2em;
+  /* font-size: 2em; */
   background: #f00;
   display: grid;
   place-items: center;
