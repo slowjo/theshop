@@ -2,12 +2,14 @@ import React from 'react';
 import Img from 'gatsby-image';
 import { useDispatch } from 'react-redux';
 import { removeItem, changeQty } from '../state/app';
+import { setClientMessage } from '../state/messages';
 
 export default function CartItem({ item }) {
     const dispatch = useDispatch();
 
     const onRemoveItem = () => {
         dispatch(removeItem(item.id));
+        dispatch(setClientMessage('Item removed from cart', 'success'));
     };
 
     const onChangeQty = (e) => {

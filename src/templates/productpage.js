@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import { useDispatch } from 'react-redux';
 import { getItemsFromStorage } from '../state/app';
+import { setClientMessage } from '../state/messages';
 import { addItem } from '../state/app';
 import { navigate } from 'gatsby';
 
@@ -27,6 +28,7 @@ export default function ProductPage({ data }) {
         const itemToAdd = {...product};
         itemToAdd.qty = qty;
         dispatch(addItem(itemToAdd));
+        dispatch(setClientMessage('Item added to cart', 'success'));
         navigate('/cartpage');
     };
 

@@ -1,3 +1,5 @@
+import { setClientMessage } from './messages';
+
 const initialState = {
     items: [],
 };
@@ -45,7 +47,7 @@ export const changeQty = (id, newQty) => async (dispatch, getState) => {
     localStorage.setItem('cartItems', JSON.stringify(getState().app.items));
 };
 
-export const sendOrder = (customerDetails, cartItems) => async (dispatch) => {
+export const sendOrder = (customerDetails, cartItems, callback) => async (dispatch) => {
     try {
         const res = await fetch(`${theUrl}orders/new`, {
             method: 'POST',
@@ -70,11 +72,18 @@ export const sendOrder = (customerDetails, cartItems) => async (dispatch) => {
             type: SEND_ORDER_SUCCESS,
             payload: resData.msg,
         });
+
+        if (callback) {
+            callback();
+            console.log('callback invoked');
+        }
     } catch (err) {
         dispatch({
             type: SEND_ORDER_FAIL,
             payload: err.message,
         });
+
+        dispatch(setClientMessage('Something went wrong', 'alert'));
     }
 };
 

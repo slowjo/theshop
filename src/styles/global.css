@@ -372,6 +372,24 @@ textarea {
   display: block;
 }
 
+/* My Client Message Styles */
+.client-message {
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+  background: #555;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.client-message-alert {
+  background: #e84118;
+}
+
+.client-message-success {
+  background: #00a8ff;
+}
+
 /* My Edit Input styles */
 .name-edit {
   font-size: 50px;
