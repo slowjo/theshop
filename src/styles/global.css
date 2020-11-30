@@ -585,6 +585,22 @@ textarea {
 }
 
 /* My cart styles */
+.cartpage-container,
+.hero,
+#products,
+.product-page-container {
+  animation: coming-in 2000ms;
+}
+
+@keyframes coming-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .tocheckoutdiv {
   display: flex;
   justify-content: flex-end;
@@ -728,6 +744,9 @@ textarea {
 .product-detail {
   background: white;
   color: black;
+  text-align: left;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .product-detail .product__title,
