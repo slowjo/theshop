@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Img from 'gatsby-image';
 import { useDispatch } from 'react-redux';
 import { removeItem, changeQty } from '../state/app';
@@ -7,9 +7,14 @@ import { setClientMessage } from '../state/messages';
 export default function CartItem({ item }) {
     const dispatch = useDispatch();
 
+    const [deleted, setDeleted] = useState(false);
+
     const onRemoveItem = () => {
-        dispatch(removeItem(item.id));
-        dispatch(setClientMessage('Item removed from cart', 'success'));
+        setDeleted(true);
+        setTimeout(() => {
+            dispatch(removeItem(item.id));
+            dispatch(setClientMessage('Item removed from cart', 'success'));
+        }, 250);
     };
 
     const onChangeQty = (e) => {
@@ -17,7 +22,7 @@ export default function CartItem({ item }) {
     };
 
     return (
-        <div className="cartitem">
+        <div className={deleted ? "cartitem deleted" : "cartitem"}>
             <div className="cartitemleft">
             <div>
                 <Img

@@ -380,6 +380,33 @@ textarea {
   background: #555;
   color: white;
   margin-bottom: 2rem;
+  animation: fade-in 150ms;
+}
+
+@keyframes fade-in {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.fading-out {
+  animation: fade-out 150ms;
+}
+
+@keyframes fade-out {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
 }
 
 .client-message-alert {
@@ -570,6 +597,11 @@ textarea {
   margin-bottom: 15px;
   display: flex;
   justify-content: space-between;
+  transition: opacity 250ms ease-in;
+}
+
+.deleted {
+  opacity: 0;
 }
 
 .cartitemright {
@@ -584,6 +616,7 @@ textarea {
   display: grid;
   grid-gap: 15px;
   border-radius: 5px;
+  margin-bottom: 2rem;
 }
 
 .order-overview__card-bottom {
@@ -691,6 +724,19 @@ textarea {
   text-align: center;
 }
 
+/* Added by me */
+.product-detail {
+  background: white;
+  color: black;
+}
+
+.product-detail .product__title,
+.product-detail .product__description,
+.product-detail p,
+.product-detail div {
+  color: black;
+}
+
 .product__title {
   font-size: clamp(3rem, 5vw + 1rem, 5.5rem);
   text-transform: uppercase;
@@ -766,6 +812,10 @@ textarea {
     /* align-items: center; */
     justify-content: center;
     grid-gap: 15px;
+  }
+
+  .order-overview__card {
+    margin-bottom: 0;
   }
 }
 

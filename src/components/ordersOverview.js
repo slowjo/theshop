@@ -29,21 +29,21 @@ const OrdersOverView = () => {
                 )}
                 {orders && orders.map(order => (
                     <div key={order._id} className="order-overview__card">
-                    <div className="order-overview__card-top">
-                        <p>{order.date}</p>
-                        <h3>Customer:</h3>
-                        <p>{order.customer.lastName}</p>
-                        <h3>Ordered Products:</h3>
-                        {order.products.map(item => (
-                            <div key={item._id}>
-                                <p>Product Name: {item.product.name}</p>
-                                <p>Quantity: {item.qty}</p>
-                            </div>
-                        ))} 
-                    </div>    
-                    <div className="order-overview__card-bottom">
-                        <button className="btn order-overview__delete bg-red" onClick={() => onRemove(order._id)}>Delete Order</button>
-                    </div>
+                        <div className="order-overview__card-top">
+                            <p>{order.date}</p>
+                            <h3>Customer:</h3>
+                            <p>{order.customer.lastName}</p>
+                            <h3>Ordered Products:</h3>
+                            {order.products.map(item => (
+                                <div key={item._id}>
+                                    <p>Product Name: {item.product.name}</p>
+                                    <p>Quantity: {item.qty}</p>
+                                </div>
+                            ))} 
+                        </div>    
+                        <div className="order-overview__card-bottom">
+                            <button className="btn order-overview__delete bg-red" onClick={() => onRemove(order._id)}>Delete Order</button>
+                        </div>
                     </div>
                 ))}
                 </>

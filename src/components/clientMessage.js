@@ -8,7 +8,7 @@ const ClientMessage = () => {
 
     return (
         clientMessages.length > 0 && clientMessages.map(message => (
-            <div key={message.id} className={`client-message client-message-${message.type}`}>
+            <div key={message.id} className={`client-message client-message-${message.type} ${message.fading}`}>
                 {message.msg}
             </div>
         ))
