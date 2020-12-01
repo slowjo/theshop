@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { removeItem, changeQty } from '../state/app';
 import { setClientMessage } from '../state/messages';
 
-export default function CartItem({ item }) {
+export default function CartItem({ item, justAdded }) {
     const dispatch = useDispatch();
 
     const [deleted, setDeleted] = useState(false);
@@ -22,7 +22,7 @@ export default function CartItem({ item }) {
     };
 
     return (
-        <div className={deleted ? "cartitem deleted" : "cartitem"}>
+        <div className={deleted ? "cartitem deleted" : justAdded ? "cartitem just-added" : "cartitem"}>
             <div className="cartitemleft">
             <div>
                 <Img

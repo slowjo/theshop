@@ -586,10 +586,14 @@ textarea {
 
 /* My cart styles */
 .cartpage-container,
-.hero,
+.hero {
+  animation: coming-in 250ms;
+}
+
 #products,
 .product-page-container {
   animation: coming-in 2000ms;
+  /* animation: coming-in 250ms; */
 }
 
 @keyframes coming-in {
@@ -614,6 +618,19 @@ textarea {
   display: flex;
   justify-content: space-between;
   transition: opacity 250ms ease-in;
+}
+
+.just-added {
+  animation: newly-added 2000ms;
+}
+
+@keyframes newly-added {
+  0% {
+    background: #999;
+  }
+  100% {
+    background: white;
+  }
 }
 
 .deleted {

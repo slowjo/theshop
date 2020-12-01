@@ -29,7 +29,9 @@ export default function ProductPage({ data }) {
         itemToAdd.qty = qty;
         dispatch(addItem(itemToAdd));
         dispatch(setClientMessage('Item added to cart', 'success'));
-        navigate('/cartpage');
+        navigate('/cartpage', {
+            state: { addedId: itemToAdd.id }
+        });
     };
 
     const goBack = () => {

@@ -9,7 +9,7 @@ import CheckoutForm from '../components/checkoutForm';
 import CheckoutCheck from '../components/checkoutCheck';
 import ClientMessage from '../components/clientMessage';
 
-export default function CartPage() {
+export default function CartPage({ location }) {
     const dispatch = useDispatch();
 
     let cartItems = [];
@@ -57,10 +57,11 @@ export default function CartPage() {
             <>
             <Link className="btn mb-1" to="/#products">Keep Shopping</Link>    
             <h1>Your Shopping Cart</h1>
-            {cartItems.map(item => (
+            {cartItems.map((item, index) => (
                 <CartItem
                     key={item.id}
                     item={item}
+                    justAdded={location.state.addedId === item.id ? true : false}
                  />
             ))}
             <div className="tocheckoutdiv">
